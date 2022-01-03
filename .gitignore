@@ -1,1 +1,3 @@
 *.exe
+/together-sirius-prod
+/together-sirius-test
