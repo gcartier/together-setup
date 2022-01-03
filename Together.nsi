@@ -10,7 +10,6 @@
 !define COPYRIGHT "Together"
 !define DESCRIPTION "Application"
 !define INSTALLER_NAME "C:\Home\together\setup\Together Setup.exe"
-!define SIRIUS_SETTINGS_DIR ".together-sirius"
 !define SIRIUS_DIR "together-sirius-prod"
 !define MAIN_APP_EXE "${SIRIUS_DIR}\Together.exe"
 !define INSTALL_TYPE "SetShellVarContext current"
@@ -97,7 +96,6 @@ SectionEnd
 
 Section Uninstall
 ${INSTALL_TYPE}
-RMDir /r "$INSTDIR\${SIRIUS_SETTINGS_DIR}"
 RMDir /r "$INSTDIR\${SIRIUS_DIR}"
 
 Delete "$INSTDIR\uninstall.exe"
