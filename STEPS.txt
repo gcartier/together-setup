@@ -1,0 +1,9 @@
+To build setup for Together Test
+
+#1 right-click Together Test.nsi and choose Compile NSIS Script
+
+#2 copy Together Test Setup.exe to website/limited
+   commit and push
+   go to montreal
+   cd /var/wwww/together
+   sudo git pull
