@@ -71,7 +71,7 @@ ${INSTALL_TYPE}
 SetOverwrite on
 SetOutPath "$INSTDIR"
 RMDir /r "$INSTDIR\${SIRIUS_DIR}"
-File /r /x ".jas" "C:\Home\together\install\${SIRIUS_DIR}"
+File /r "C:\Home\together\setup\${SIRIUS_DIR}"
 SectionEnd
 
 ######################################################################
