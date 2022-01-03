@@ -1,8 +1,18 @@
-To build setup for Together Test
+To build setup for Together
 
-#1 right-click Together Test.nsi and choose Compile NSIS Script
+#1 copy / replace together-sirius-prod from install to setup
+   in setup/together-sirius-prod
+     delete .jas
+     cd into it
+     jas init -open
+     jas add .
+     cd ..
 
-#2 copy Together Test Setup.exe to website/limited
+#2 right-click Together.nsi and choose Compile NSIS Script
+
+#3 test it locally
+
+#4 copy Together Setup.exe to website/limited
    commit and push
    go to montreal
    cd /var/wwww/together
