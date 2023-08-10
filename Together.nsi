@@ -15,6 +15,7 @@
 !define INSTALL_TYPE "SetShellVarContext current"
 !define REG_ROOT "HKCU"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\together.exe"
+!define REG_URL_SCHEME "Software\Classes\togethersphere"
 !define UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 
 ######################################################################
@@ -72,6 +73,14 @@ SetOverwrite on
 SetOutPath "$INSTDIR"
 RMDir /r "$INSTDIR\${SIRIUS_DIR}"
 File /r "C:\Home\together\setup\${SIRIUS_DIR}"
+SectionEnd
+
+######################################################################
+
+Section -URL_Scheme
+WriteRegStr ${REG_ROOT} "${REG_URL_SCHEME}" "" "URL:Together Launcher"
+WriteRegStr ${REG_ROOT} "${REG_URL_SCHEME}" "URL Protocol" ""
+WriteRegStr ${REG_ROOT} "${REG_URL_SCHEME}\shell\open\command" "" '"$INSTDIR\${MAIN_APP_EXE}" -url "%1"'
 SectionEnd
 
 ######################################################################
