@@ -2,8 +2,8 @@ To build setup for Together
 
 #1 copy / replace together-sirius-prod from install to setup
    in setup/together-sirius-prod
-     delete .jas
      cd into it
+     rm -rf .jas
      jas init -open
      jas add .
      cd ..
