@@ -10,8 +10,8 @@
 !define COPYRIGHT "Together"
 !define DESCRIPTION "Application"
 !define INSTALLER_NAME "C:\Home\together\setup\Together Setup.exe"
-!define SIRIUS_DIR "together-sirius-prod"
-!define MAIN_APP_EXE "${SIRIUS_DIR}\Together.exe"
+!define TOGETHER_DIR "together-prod"
+!define MAIN_APP_EXE "${TOGETHER_DIR}\Together.exe"
 !define INSTALL_TYPE "SetShellVarContext current"
 !define REG_ROOT "HKCU"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\together.exe"
@@ -71,8 +71,8 @@ Section -MainProgram
 ${INSTALL_TYPE}
 SetOverwrite on
 SetOutPath "$INSTDIR"
-RMDir /r "$INSTDIR\${SIRIUS_DIR}"
-File /r "C:\Home\together\setup\${SIRIUS_DIR}"
+RMDir /r "$INSTDIR\${TOGETHER_DIR}"
+File /r "C:\Home\together\setup\${TOGETHER_DIR}"
 SectionEnd
 
 ######################################################################
@@ -105,7 +105,7 @@ SectionEnd
 
 Section Uninstall
 ${INSTALL_TYPE}
-RMDir /r "$INSTDIR\${SIRIUS_DIR}"
+RMDir /r "$INSTDIR\${TOGETHER_DIR}"
 
 Delete "$INSTDIR\uninstall.exe"
 
