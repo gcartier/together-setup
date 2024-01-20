@@ -12,7 +12,9 @@ To build setup for Together
 #3 test it locally
 
 #4 copy Together Setup.exe to website/limited
-   commit and push
+   cd to website/limited
+   jas sync
+   jas upload
    go to montreal
-   cd /var/wwww/together
-   sudo git pull
+   cd /var/wwww/together/limited
+   sudo jas download
