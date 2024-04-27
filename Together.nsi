@@ -43,6 +43,30 @@ ManifestDPIAware true
 
 ######################################################################
 
+Function RunTogether
+
+Exec "$\"$INSTDIR\${MAIN_APP_EXE}$\""
+
+Var /GLOBAL retries
+
+StrCpy $retries 0
+
+retry:
+Sleep 100
+IntOp $retries $retries + 1
+IntCmp $retries 100 0 0 done
+FindWindow $0 "SplashWndClass" ""
+IsWindow $0 continue retry
+
+continue:
+System::Call 'user32::SetForegroundWindow(i r0)'
+
+done:
+
+FunctionEnd
+
+######################################################################
+
 !include "MUI.nsh"
 
 !define MUI_ABORTWARNING
@@ -55,6 +79,7 @@ ManifestDPIAware true
 
 !insertmacro MUI_PAGE_INSTFILES
 
+!define MUI_FINISHPAGE_RUN_FUNCTION "RunTogether"
 !define MUI_FINISHPAGE_RUN "$INSTDIR\${MAIN_APP_EXE}"
 !insertmacro MUI_PAGE_FINISH
 
