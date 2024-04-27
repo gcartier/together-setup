@@ -11,8 +11,8 @@ To build setup for Together
 
 #3 test it locally
 
-#4 copy Together Setup.exe to website/limited
-   cd to website/limited
+#4 copy Together Setup.exe to website/limited/binaries
+   cd to website/limited/binaries
    jas sync
    jas upload
    go to montreal
