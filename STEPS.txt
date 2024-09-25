@@ -1,11 +1,7 @@
 To build setup for Together
 
-#1 copy / replace together-prod from install to setup
-   delete setup/together-prod/.jas
-   in setup/together-prod
-     jas init -open
-     jas add .
-     cd ..
+#1 in prod after deploy
+   ./setup
 
 #2 right-click Together.nsi and choose Compile NSIS Script
 

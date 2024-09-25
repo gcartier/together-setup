@@ -1,3 +1,4 @@
 *.exe
+/together-live
 /together-prod
 /together-test
